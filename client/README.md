@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+Copy properties from .env.local.template to .env.local
+
 First, run the development server:
 
 ```bash
