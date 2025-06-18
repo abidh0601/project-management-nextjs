@@ -11,7 +11,13 @@
 				"dbaeumer.vscode-eslint",
 				"Postman.postman-for-vscode",
 				"esbenp.prettier-vscode",
-				"DBCode.dbcode"
+				"DBCode.dbcode",
+				"dsznajder.es7-react-js-snippets",
+				"bradlc.vscode-tailwindcss",
+				"austenc.tailwind-docs",
+				"ms-vscode.vscode-typescript-next",
+				"VisualStudioExptTeam.intellicode-api-usage-examples",
+				"Prisma.prisma"
 			]
 		}
 	},
