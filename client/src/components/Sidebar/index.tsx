@@ -103,7 +103,7 @@ const Sidebar = () => {
           projects?.map((project) => (
             <SidebarLink
               key={project.id}
-              href={`projects/${project.id}`}
+              href={`/projects/${project.id}`}
               label={project.name}
               icon={Briefcase}
             />
