@@ -1,10 +1,11 @@
 import Header from "@/components/Header";
 import { Clock, Filter, Grid3x3, List, Share2, Table } from "lucide-react";
 import React, { useState } from "react";
+import { ProjectTab } from "./[id]/page";
 
 type Props = {
   activeTab: string;
-  setActiveTab: (tabName: string) => void;
+  setActiveTab: (tabName: ProjectTab) => void;
 };
 
 const ProjectHeader = ({ activeTab, setActiveTab }: Props) => {
@@ -20,25 +21,25 @@ const ProjectHeader = ({ activeTab, setActiveTab }: Props) => {
       <div className="flex flex-wrap-reverse gap-2 border-y border-gray-200 pb-[8px] pt-2 dark:border-stroke-dark md:items-center">
         <div className="flex flex-1 items-center gap-2 md:gap-4">
           <TabButton
-            name="Board"
+            name={ProjectTab.BOARD}
             icon={<Grid3x3 className="h-5 w-5" />}
             setActiveTab={setActiveTab}
             activeTab={activeTab}
           />
           <TabButton
-            name="List"
+            name={ProjectTab.LIST}
             icon={<List className="h-5 w-5" />}
             setActiveTab={setActiveTab}
             activeTab={activeTab}
           />
           <TabButton
-            name="Timeline"
+            name={ProjectTab.TIMELINE}
             icon={<Clock className="h-5 w-5" />}
             setActiveTab={setActiveTab}
             activeTab={activeTab}
           />
           <TabButton
-            name="Table"
+            name={ProjectTab.TABLE}
             icon={<Table className="h-5 w-5" />}
             setActiveTab={setActiveTab}
             activeTab={activeTab}
@@ -67,9 +68,9 @@ const ProjectHeader = ({ activeTab, setActiveTab }: Props) => {
 };
 
 type TabButtonProps = {
-  name: string;
+  name: ProjectTab;
   icon: React.ReactNode;
-  setActiveTab: (tabName: string) => void;
+  setActiveTab: (tab: ProjectTab) => void;
   activeTab: string;
 };
 
