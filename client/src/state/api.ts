@@ -60,6 +60,12 @@ export interface Task {
   attachments?: Attachment[];
 }
 
+export interface SearchResults {
+  tasks?: Task[];
+  projects?: Project[];
+  users?: User[];
+}
+
 export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL }),
   reducerPath: "api",
@@ -78,7 +84,7 @@ export const api = createApi({
       invalidatesTags: ["Projects"],
     }),
     getTasks: build.query<Task[], { projectId: number }>({
-      query: ({projectId}) => `tasks?projectId=${projectId}`,
+      query: ({ projectId }) => `tasks?projectId=${projectId}`,
       providesTags: (result) =>
         result
           ? result.map(({ id }) => ({ type: "Tasks" as const, id }))
@@ -102,6 +108,9 @@ export const api = createApi({
         { type: "Tasks", id: taskId },
       ],
     }),
+    search: build.query<SearchResults, string>({
+      query: (query) => `search?query=${query}`,
+    }),
   }),
 });
 
@@ -111,4 +120,5 @@ export const {
   useGetTasksQuery,
   useCreateTaskMutation,
   useUpdateTaskStatusMutation,
+  useSearchQuery,
 } = api;
