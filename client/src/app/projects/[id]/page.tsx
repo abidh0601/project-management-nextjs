@@ -26,7 +26,7 @@ const Projects = ({ params }: Props) => {
   return (
     <div className="dark:bg-neutral-900">
       <ModalNewTask
-        projectId={id}
+        id={id}
         isOpen={isModalNewTaskOpen}
         onClose={() => setIsModelNewTaskOpen(false)}
       />
