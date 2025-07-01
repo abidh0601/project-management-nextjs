@@ -42,32 +42,16 @@ const columns: GridColDef[] = [
     width: 130,
   },
   {
-    field: "startDate",
-    headerName: "Start Date",
-    width: 130,
-  },
-  {
-    field: "dueDate",
-    headerName: "Due Date",
-    width: 130,
-  },
-  {
-    field: "author",
-    headerName: "Author",
-    width: 150,
-    renderCell: (params) => params.value.username || "Unknown",
-  },
-  {
     field: "assignee",
     headerName: "Assignee",
     width: 150,
-    renderCell: (params) => params.value.username || "Unassigned",
+    renderCell: (params) => params.value?.assignee || "Unassigned",
   },
   {
     field: "author",
     headerName: "Author",
     width: 150,
-    renderCell: (params) => params.value.username || "Unknown",
+    renderCell: (params) => params.value?.author || "Unknown",
   },
   {
     field: "dueDate",
