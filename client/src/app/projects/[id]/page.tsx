@@ -12,16 +12,9 @@ type Props = {
   params: { id: string };
 };
 
-export enum ProjectTab {
-  BOARD = "Board",
-  LIST = "List",
-  TIMELINE = "Timeline",
-  TABLE = "Table",
-}
-
 const Projects = ({ params }: Props) => {
   const { id } = params;
-  const [activeTab, setActiveTab] = useState(ProjectTab.BOARD);
+  const [activeTab, setActiveTab] = useState("BOARD");
   const [isModalNewTaskOpen, setIsModelNewTaskOpen] = useState(false);
   return (
     <div className="dark:bg-neutral-900">
@@ -32,16 +25,16 @@ const Projects = ({ params }: Props) => {
       />
 
       <ProjectHeader activeTab={activeTab} setActiveTab={setActiveTab} />
-      {activeTab === ProjectTab.BOARD && (
+      {activeTab === "BOARD" && (
         <Board id={id} setIsModalNewTaskOpen={setIsModelNewTaskOpen} />
       )}
-      {activeTab === ProjectTab.LIST && (
+      {activeTab === "LIST "&& (
         <ListView id={id} setIsModalNewTaskOpen={setIsModelNewTaskOpen} />
       )}
-      {activeTab === ProjectTab.TIMELINE && (
+      {activeTab === "TIMELINE" && (
         <Timeline id={id} setIsModalNewTaskOpen={setIsModelNewTaskOpen} />
       )}
-      {activeTab === ProjectTab.TABLE && (
+      {activeTab === "TABLE" && (
         <Table id={id} setIsModalNewTaskOpen={setIsModelNewTaskOpen} />
       )}
     </div>

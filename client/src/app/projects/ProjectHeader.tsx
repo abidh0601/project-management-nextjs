@@ -9,12 +9,11 @@ import {
   Table,
 } from "lucide-react";
 import React, { useState } from "react";
-import { ProjectTab } from "./[id]/page";
 import ModalNewProject from "./ModalNewProject";
 
 type Props = {
   activeTab: string;
-  setActiveTab: (tabName: ProjectTab) => void;
+  setActiveTab: (tabName: string) => void;
 };
 
 const ProjectHeader = ({ activeTab, setActiveTab }: Props) => {
@@ -44,25 +43,25 @@ const ProjectHeader = ({ activeTab, setActiveTab }: Props) => {
       <div className="flex flex-wrap-reverse gap-2 border-y border-gray-200 pb-[8px] pt-2 dark:border-stroke-dark md:items-center">
         <div className="flex flex-1 items-center gap-2 md:gap-4">
           <TabButton
-            name={ProjectTab.BOARD}
+            name={"BOARD"}
             icon={<Grid3x3 className="h-5 w-5" />}
             setActiveTab={setActiveTab}
             activeTab={activeTab}
           />
           <TabButton
-            name={ProjectTab.LIST}
+            name={"LIST"}
             icon={<List className="h-5 w-5" />}
             setActiveTab={setActiveTab}
             activeTab={activeTab}
           />
           <TabButton
-            name={ProjectTab.TIMELINE}
+            name={"TIMELINE"}
             icon={<Clock className="h-5 w-5" />}
             setActiveTab={setActiveTab}
             activeTab={activeTab}
           />
           <TabButton
-            name={ProjectTab.TABLE}
+            name={"TABLE"}
             icon={<Table className="h-5 w-5" />}
             setActiveTab={setActiveTab}
             activeTab={activeTab}
@@ -91,9 +90,9 @@ const ProjectHeader = ({ activeTab, setActiveTab }: Props) => {
 };
 
 type TabButtonProps = {
-  name: ProjectTab;
+  name: string;
   icon: React.ReactNode;
-  setActiveTab: (tab: ProjectTab) => void;
+  setActiveTab: (tab: string) => void;
   activeTab: string;
 };
 
