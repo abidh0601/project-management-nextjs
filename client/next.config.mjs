@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    compiler: {
-        styledComponents: true
+    images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "pm-s3-images-hannan.s3.us-east-1.amazonaws.com",
+                port: "",
+                pathname: "/**"
+            }
+        ]
     }
 };
 
